@@ -1,0 +1,23 @@
+
+he1 = gaussian(6.3624214, 0.15432897)
+he2 = gaussian(1.1589230, 0.53532814)
+he3 = gaussian(0.3136498, 0.4446345422)
+
+He_basis_set = [copy.deepcopy(he1), copy.deepcopy(he2), copy.deepcopy(he3)]
+
+
+He1 = atom(0.00000000, 0.00000000, 0.00000000, 2, 2, 1, "He", copy.deepcopy(He_basis_set)) #x, y, z, Z, N, index, basis_set
+He2 = atom(0.00000000, 0.00000000, 2.74456263, 2, 2, 2, "He", copy.deepcopy(He_basis_set))
+He3 = atom(2.89301385, 0.00000000, -0.45820756, 2, 2, 3, "He", copy.deepcopy(He_basis_set))
+He4 = atom(-0.94094944, -1.62977162, -1.57910050, 0, 0, 4, "He_ghost", copy.deepcopy(He_basis_set))
+He5 = atom(-1.13383567, 1.96386008, 0.00000000, 0, 0, 5, "He_ghost", copy.deepcopy(He_basis_set))
+
+list_atoms = [He1, He2, He3, He4, He5]
+
+name = "he5.txt"
+
+to_print_fock = False
+to_print_P = False
+for smth in list_atoms:
+    smth.update_basis_set_with_pos()
+
